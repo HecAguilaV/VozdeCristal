@@ -17,12 +17,16 @@ En Chile y el mundo, la mayoría de los casos de abuso infantil ocurren en entor
 ## Solución Propuesta
 Voz de Cristal plantea un dispositivo portátil, discreto y seguro, que solo transmite datos en situaciones críticas detectadas por algoritmos locales (TinyML). El sistema prioriza la privacidad, la seguridad y la inmutabilidad de la evidencia, integrándose con redes privadas y protocolos de respuesta social y legal. La tecnología NB-IoT, recomendada por la GSMA y ya operativa en Chile ([GSMA NB-IoT](https://www.gsma.com/iot/resources/nb-iot-deployment-guide/)), permite cobertura profunda y bajo costo operativo.
 
+
 ## Impacto Esperado
 - Reducción de la impunidad en casos de abuso infantil.
 - Generación de evidencia confiable y protegida.
 - Empoderamiento de redes de apoyo y autoridades.
 - Protección efectiva y no invasiva para los niños.
-- Costo de hardware validado en $13 USD por dispositivo, según cotizaciones de proveedores internacionales ([LCSC](https://www.lcsc.com/), [Espressif](https://www.espressif.com/en/products/socs/esp32-s3)).
+- Arquitectura basada en hardware costo-eficiente y componentes estandarizados, permitiendo una implementación masiva con una inversión significativamente menor a los costos actuales de judicialización y reparación de daños crónicos en la infancia.
+
+## Sostenibilidad y Viabilidad
+El costo de reparar el daño es varias veces mayor que el de proteger a tiempo. Voz de Cristal busca cerrar esa brecha, permitiendo que la inversión social se enfoque en prevención y no solo en reparación.
 
 ## Invitación
 El proyecto está abierto a la colaboración de instituciones, empresas, municipios, académicos y profesionales de todas las áreas. No se busca financiamiento directo ni créditos personales, sino sumar capacidades para llevar esta solución a quienes más la necesitan.

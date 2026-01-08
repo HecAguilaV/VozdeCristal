@@ -132,7 +132,7 @@
     </section>
 
     <section class="max-w-3xl mx-auto px-6 py-20 border-t border-slate-200">
-      <p class="text-xs uppercase tracking-[0.2em] opacity-40 mb-16">Los 4 Pilares</p>
+      <p class="text-s uppercase tracking-[0.2em] opacity-40 mb-16">Los 4 Pilares</p>
       <div class="space-y-16">
         
         <div class="flex gap-8 items-start border-l-2 border-slate-300 pl-8">
@@ -203,7 +203,6 @@
         <!-- Divisor visual -->
         <div class="border-t border-white/10 pt-12"></div>
 
-        <!-- Tu voz valida -->
         <div class="space-y-6">
           <p class="text-xs uppercase tracking-[0.2em] opacity-40">Validación Social</p>
           <h3 class="text-3xl md:text-4xl font-serif leading-tight">
@@ -215,6 +214,78 @@
           <div class="flex gap-6 pt-4">
             <a href="/encuesta" class="border-b-2 border-white pb-1 font-semibold hover:border-teal-400 hover:text-teal-400 transition">Ir a la Encuesta →</a>
           </div>
+          <!-- Mini resumen de resultados -->
+          <div class="mt-8 flex flex-col items-center bg-white/90 rounded-xl shadow p-6">
+            <div class="w-full flex flex-col items-center gap-2 py-2">
+              <span class="text-black font-bold text-4xl font-serif" id="respuestas-totales" style="line-height:1.1;">0</span>
+              <span class="text-base text-black font-light" style="letter-spacing:0.01em;">personas ya han participado en la encuesta</span>
+              <span id="sin-respuestas-msg" class="text-xs text-gray-700 mt-2 hidden">Aún no hay respuestas suficientes para mostrar resultados.</span>
+              <a href="#" id="toggle-resultados" class="mt-2 text-black underline underline-offset-4 hover:text-gray-700 transition text-base font-medium" style="font-family: 'Crimson Pro', serif;">Ver más resultados</a>
+              <div id="resultados-panel" class="max-h-0 overflow-hidden transition-all duration-500 w-full">
+                <div class="pt-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <!-- Pregunta 1: Barras -->
+                  <div class="flex flex-col items-center">
+                    <h3 class="font-bold mb-2 text-black text-center text-base">¿Qué tan seguro se siente respecto a la respuesta actual del sistema ante el maltrato infantil dentro del hogar?</h3>
+                    <img src="assets/img/encuesta_p1_barras.svg" alt="Gráfico de barras: seguridad percibida" class="w-full max-w-xs border rounded shadow" onerror="this.style.display='none'">
+                    <span class="text-xs text-gray-700 mt-2">Escala 1 (nada seguro) a 5 (muy seguro)</span>
+                  </div>
+                  <!-- Pregunta 3: Circular -->
+                  <div class="flex flex-col items-center">
+                    <h3 class="font-bold mb-2 text-black text-center text-base">¿Solicitaría el dispositivo para su hijo/a?</h3>
+                    <img src="assets/img/encuesta_p3_circular.svg" alt="Gráfico circular: disposición a solicitar" class="w-full max-w-xs border rounded shadow" onerror="this.style.display='none'">
+                  </div>
+                  <!-- Pregunta 4: Barras -->
+                  <div class="flex flex-col items-center">
+                    <h3 class="font-bold mb-2 text-black text-center text-base">¿Qué monto consideraría justo pagar por el dispositivo?</h3>
+                    <img src="assets/img/encuesta_p4_barras.svg" alt="Gráfico de barras: monto considerado justo" class="w-full max-w-xs border rounded shadow" onerror="this.style.display='none'">
+                  </div>
+                  <!-- Pregunta 5: Barras -->
+                  <div class="flex flex-col items-center md:col-span-2">
+                    <h3 class="font-bold mb-2 text-black text-center text-base">¿Qué factor es más importante para usted en una solución de este tipo?</h3>
+                    <img src="assets/img/encuesta_p5_barras.svg" alt="Gráfico de barras: factor más importante" class="w-full max-w-md border rounded shadow" onerror="this.style.display='none'">
+                  </div>
+                </div>
+                <p class="mt-8 text-xs text-center text-gray-500">* Los gráficos se actualizan automáticamente a medida que se reciben nuevas respuestas. No se muestra información personal ni individual.</p>
+              </div>
+            </div>
+          </div>
+          <script>
+            // Mini resumen: contar respuestas totales y mostrar gráfico solo si hay respuestas
+            fetch('assets/img/encuesta_p1_barras.svg')
+              .then(r => r.text())
+              .then(svg => {
+                const matches = svg.match(/>(\d+)<\/text>/g);
+                let total = 0;
+                if (matches) {
+                  // Solo los valores de conteo (cada barra tiene un label con el valor)
+                  const valores = matches.filter((_,i) => i%2===1).map(t=>parseInt(t.replace(/\D/g,'')));
+                  total = valores.reduce((a,b)=>a+b,0);
+                }
+                document.getElementById('respuestas-totales').textContent = total;
+                const sinMsg = document.getElementById('sin-respuestas-msg');
+                if (total > 0) {
+                  sinMsg.classList.add('hidden');
+                } else {
+                  sinMsg.classList.remove('hidden');
+                }
+              });
+            // Accordion editorial
+            const btn = document.getElementById('toggle-resultados');
+            const panel = document.getElementById('resultados-panel');
+            let abierto = false;
+            btn.addEventListener('click', (e) => {
+              e.preventDefault();
+              abierto = !abierto;
+              if (abierto) {
+                panel.style.maxHeight = panel.scrollHeight + 'px';
+                btn.textContent = 'Ocultar resultados';
+              } else {
+                panel.style.maxHeight = '0px';
+                btn.textContent = 'Ver más resultados';
+              }
+            });
+          </script>
         </div>
 
       </div>

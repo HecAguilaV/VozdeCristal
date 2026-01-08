@@ -1,0 +1,3 @@
+<svg width="400" height="160" xmlns="http://www.w3.org/2000/svg">
+<style>.label{font:12px sans-serif;}</style>
+<rect x="20" y="120" width="50" height="0" fill="#ff7f50" rx="6"/><text class="label" x="45.0" y="145" text-anchor="middle">Privacidad de Datos</text><text class="label" x="45.0" y="115" text-anchor="middle">0</text><rect x="175" y="120" width="50" height="0" fill="#6ec6ff" rx="6"/><text class="label" x="200.0" y="145" text-anchor="middle">Rapidez de Alerta</text><text class="label" x="200.0" y="115" text-anchor="middle">0</text><rect x="330" y="120" width="50" height="0" fill="#ffd54f" rx="6"/><text class="label" x="355.0" y="145" text-anchor="middle">Validez de la Prueba Judicial</text><text class="label" x="355.0" y="115" text-anchor="middle">0</text></svg>

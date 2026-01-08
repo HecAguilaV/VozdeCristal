@@ -67,10 +67,14 @@
 <body class="bg-[#FFF5F2] text-[#1A1A1A] selection:bg-orange-100">
   
   <header class="fixed top-0 left-0 right-0 bg-[#FFF5F2]/90 backdrop-blur-md z-50 border-b border-orange-100/50">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-      <div class="flex items-center gap-3">
-        <img src="./assets/img/logoVC.png" alt="Voz de Cristal" class="h-14 w-14" />
-        <span class="logo-text text-sm">VOZ DE CRISTAL</span>
+    <div class="max-w-7xl mx-auto px-6 py-3 md:py-4 flex items-center justify-between">
+      <!-- Banner full-width en móvil, logo+texto en desktop -->
+      <div class="flex items-center w-full md:w-auto">
+        <img src="./assets/img/Banner.png" alt="Voz de Cristal" class="h-10 w-full object-contain md:hidden" />
+        <div class="hidden md:flex items-center gap-3">
+          <img src="./assets/img/logoVC.png" alt="Voz de Cristal" class="h-14 w-14" />
+          <span class="logo-text text-sm">VOZ DE CRISTAL</span>
+        </div>
       </div>
       <nav class="hidden md:flex gap-8 text-sm">
         <a href="#proyecto" class="hover:opacity-100 opacity-60 transition">Proyecto</a>
@@ -127,71 +131,92 @@
       </div>
     </section>
 
-    <section class="max-w-4xl mx-auto px-6 py-20 border-t border-slate-200">
-      <p class="text-xs uppercase tracking-[0.2em] opacity-40 mb-12">Los 4 Pilares</p>
-      <div class="grid md:grid-cols-2 gap-16">
+    <section class="max-w-3xl mx-auto px-6 py-20 border-t border-slate-200">
+      <p class="text-xs uppercase tracking-[0.2em] opacity-40 mb-16">Los 4 Pilares</p>
+      <div class="space-y-16">
         
-        <div class="space-y-3">
-          <h4 class="text-2xl font-serif">🔒 Sin cámaras ni micrófonos</h4>
-          <p class="text-base leading-relaxed opacity-70">
-            El dispositivo solo detecta patrones de riesgo. Nunca graba ni escucha. La privacidad es un derecho, no una concesión.
-          </p>
+        <div class="flex gap-8 items-start border-l-2 border-slate-300 pl-8">
+          <span class="text-4xl font-serif text-slate-300 flex-shrink-0">I</span>
+          <div class="space-y-3">
+            <h4 class="text-2xl md:text-3xl font-serif leading-tight">Sin cámaras ni micrófonos</h4>
+            <p class="text-base leading-relaxed opacity-70">
+              El dispositivo solo detecta patrones de riesgo. Nunca graba ni escucha. La privacidad es un derecho, no una concesión.
+            </p>
+          </div>
         </div>
 
-        <div class="space-y-3">
-          <h4 class="text-2xl font-serif">⚖️ Cierra la brecha de evidencia</h4>
-          <p class="text-base leading-relaxed opacity-70">
-            Cuando un niño habla, su palabra debe bastar. Pero cuando no puede hacerlo, necesita un testigo independiente que no pueda ser intimidado.
-          </p>
+        <div class="flex gap-8 items-start border-l-2 border-slate-300 pl-8">
+          <span class="text-4xl font-serif text-slate-300 flex-shrink-0">II</span>
+          <div class="space-y-3">
+            <h4 class="text-2xl md:text-3xl font-serif leading-tight">Cierra la brecha de evidencia</h4>
+            <p class="text-base leading-relaxed opacity-70">
+              Cuando un niño habla, su palabra debe bastar. Pero cuando no puede hacerlo, necesita un testigo independiente que no pueda ser intimidado.
+            </p>
+          </div>
         </div>
 
-        <div class="space-y-3">
-          <h4 class="text-2xl font-serif">📡 Llega donde otros no llegan</h4>
-          <p class="text-base leading-relaxed opacity-70">
-            Funciona con tecnología NB-IoT, la misma que usan medidores de agua. No depende de Wi-Fi ni del teléfono de nadie.
-          </p>
+        <div class="flex gap-8 items-start border-l-2 border-slate-300 pl-8">
+          <span class="text-4xl font-serif text-slate-300 flex-shrink-0">III</span>
+          <div class="space-y-3">
+            <h4 class="text-2xl md:text-3xl font-serif leading-tight">Llega donde otros no llegan</h4>
+            <p class="text-base leading-relaxed opacity-70">
+              Funciona con tecnología NB-IoT, la misma que usan medidores de agua. No depende de Wi-Fi ni del teléfono de nadie.
+            </p>
+          </div>
         </div>
 
-        <div class="space-y-3">
-          <h4 class="text-2xl font-serif">💰 Costo-eficiente como política pública</h4>
-          <p class="text-base leading-relaxed opacity-70">
-            Diseñado con componentes estandarizados para que sea viable implementarlo en colegios y jardines infantiles sin comprometer presupuestos públicos.
-          </p>
+        <div class="flex gap-8 items-start border-l-2 border-slate-300 pl-8">
+          <span class="text-4xl font-serif text-slate-300 flex-shrink-0">IV</span>
+          <div class="space-y-3">
+            <h4 class="text-2xl md:text-3xl font-serif leading-tight">Costo-eficiente como política pública</h4>
+            <p class="text-base leading-relaxed opacity-70">
+              Diseñado con componentes estandarizados para que sea viable implementarlo en colegios y jardines infantiles sin comprometer presupuestos públicos.
+            </p>
+          </div>
         </div>
 
       </div>
     </section>
 
-    <section class="max-w-3xl px-6 py-20 mx-auto space-y-8 border-t border-slate-200">
-      <div class="space-y-6">
-        <p class="text-xs uppercase tracking-[0.2em] opacity-40">¿Por qué ahora?</p>
-        <h3 class="text-4xl md:text-5xl font-serif leading-tight">
-          Porque reparar cuesta más que proteger.
-        </h3>
-      </div>
-      <div class="space-y-6 text-lg leading-relaxed opacity-80">
-        <p>
-          Hoy el Estado gasta millones reparando daños que pudieron detenerse a tiempo. Terapias de por vida, juicios largos, familias destrozadas.
-        </p>
-        <p>
-          <strong>Voz de Cristal no evita que el agresor actúe la primera vez, pero corta el ciclo antes de que se vuelva crónico.</strong>
-        </p>
-        <p>
-          Tu opinión en esta encuesta nos ayuda a demostrar ante municipios y fundaciones que esta necesidad existe. Que merece ser una política pública. Que un niño no debería esperar años para ser escuchado.
-        </p>
-      </div>
-    </section>
+    <section id="encuesta" class="bg-slate-900 text-white py-24 -mx-6 px-6 md:-mx-0 md:px-0">
+      <div class="max-w-3xl mx-auto px-6 space-y-12">
+        
+        <!-- ¿Por qué ahora? -->
+        <div class="space-y-6">
+          <p class="text-xs uppercase tracking-[0.2em] opacity-40">¿Por qué ahora?</p>
+          <h3 class="text-4xl md:text-5xl font-serif leading-tight">
+            Porque reparar cuesta más que proteger.
+          </h3>
+        </div>
+        <div class="space-y-6 text-lg leading-relaxed opacity-80">
+          <p>
+            Hoy el Estado gasta millones reparando daños que pudieron detenerse a tiempo. Terapias de por vida, juicios largos, familias destrozadas.
+          </p>
+          <p>
+            <strong>Voz de Cristal no evita que el agresor actúe la primera vez, pero corta el ciclo antes de que se vuelva crónico.</strong>
+          </p>
+          <p>
+            Tu opinión en esta encuesta nos ayuda a demostrar ante municipios y fundaciones que esta necesidad existe. Que merece ser una política pública. Que un niño no debería esperar años para ser escuchado.
+          </p>
+        </div>
 
-    <section id="encuesta" class="max-w-2xl px-6 py-16 space-y-6 border-t border-slate-200">
-      <p class="text-xs uppercase tracking-[0.2em] opacity-40">Validación Social</p>
-      <h3 class="text-3xl md:text-4xl font-serif leading-tight">
-        Tu voz valida esta protección.
-      </h3>
-      <p class="text-lg leading-relaxed opacity-70">
-        Responde la encuesta anónima. Tu opinión sirve para demostrar la necesidad ante autoridades, fundaciones y socios estratégicos que puedan financiar el despliegue.
-      </p>
-      <div class="flex gap-6 pt-4">
-        <a href="/encuesta" class="border-b-2 border-teal-600 pb-1 font-semibold hover:text-teal-600 transition">Ir a la Encuesta →</a>
+        <!-- Divisor visual -->
+        <div class="border-t border-white/10 pt-12"></div>
+
+        <!-- Tu voz valida -->
+        <div class="space-y-6">
+          <p class="text-xs uppercase tracking-[0.2em] opacity-40">Validación Social</p>
+          <h3 class="text-3xl md:text-4xl font-serif leading-tight">
+            Tu voz valida esta protección.
+          </h3>
+          <p class="text-lg leading-relaxed opacity-70">
+            Responde la encuesta anónima. Tu opinión sirve para demostrar la necesidad ante autoridades, fundaciones y socios estratégicos que puedan financiar el despliegue.
+          </p>
+          <div class="flex gap-6 pt-4">
+            <a href="/encuesta" class="border-b-2 border-white pb-1 font-semibold hover:border-teal-400 hover:text-teal-400 transition">Ir a la Encuesta →</a>
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -269,20 +294,22 @@
 
   </main>
 
-  <footer class="bg-slate-900 text-white py-16">
+  <footer class="bg-slate-900 text-white py-16 -mx-6 px-6 md:-mx-0 md:px-0">
     <div class="max-w-7xl mx-auto px-6 space-y-8">
       <div class="flex flex-col md:flex-row justify-between items-start gap-8">
         <div class="space-y-3">
-          <div class="flex items-center gap-3">
+          <!-- Logo circular + texto en móvil, banner en desktop -->
+          <div class="flex items-center gap-3 md:hidden">
             <img src="./assets/img/logoVC.png" alt="Voz de Cristal" class="h-8 w-8" />
             <span class="text-xs tracking-widest text-white font-bold">VOZ DE CRISTAL</span>
           </div>
+          <img src="./assets/img/Banner.png" alt="Voz de Cristal" class="hidden md:block h-12 w-auto" />
           <p class="text-xs opacity-60 max-w-xs">Cuando el sistema calla, la tecnología habla.</p>
         </div>
         <div class="space-y-3">
           <p class="text-xs uppercase tracking-wider opacity-40">Contacto Institucional</p>
           <p class="text-sm">¿Representas una institución, fundación o medio?</p>
-          <a href="mailto:contacto@vozdecristal.org" class="text-sm border-b border-white/30 hover:border-white transition inline-block">contacto@vozdecristal.org</a>
+          <a href="mailto:contacto@vozdecristal.org" class="text-sm border-b border-white/30 hover:border-white transition inline-block">vozdecristal2026@gmail.com</a>
         </div>
       </div>
       <div class="pt-6 border-t border-white/10">

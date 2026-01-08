@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Encuesta de validación social - Voz de Cristal. Tu opinión ayuda a proteger la infancia." />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" type="image/png" href="./assets/img/logoVC.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    h1 { font-family: 'Crimson Pro', serif; }
+    .logo-text { letter-spacing: 0.15em; font-weight: 700; }
+  </style>
+  <title>Encuesta - Voz de Cristal</title>
+</head>
+<body class="bg-[#FFF5F2] text-[#1A1A1A]">
+  
+  <header class="fixed top-0 left-0 right-0 bg-[#FFF5F2]/90 backdrop-blur-md z-50 border-b border-orange-100/50">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-3">
+        <img src="./assets/img/logoVC.png" alt="Voz de Cristal" class="h-14 w-14" />
+        <span class="logo-text text-sm">VOZ DE CRISTAL</span>
+      </a>
+      <a href="/" class="text-sm opacity-60 hover:opacity-100 transition">← Volver</a>
+    </div>
+  </header>
+
+  <main class="pt-28 pb-12">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="text-center mb-8">
+        <h1 class="text-4xl md:text-5xl font-serif mb-4">Tu voz valida esta protección</h1>
+        <p class="text-lg opacity-70">Responde la encuesta anónima para ayudarnos a demostrar la necesidad de este sistema.</p>
+      </div>
+      
+      <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+        <iframe 
+          id="formIframe"
+          src="https://docs.google.com/forms/d/e/1FAIpQLSf8VvJ7qGVZBNUl3-hYBfKWYPjkEXZ3VTL0zZx9qYzJZ8Q7Ew/viewform?embedded=true" 
+          width="100%" 
+          height="1200" 
+          frameborder="0" 
+          marginheight="0" 
+          marginwidth="0"
+          class="w-full"
+          title="Encuesta Voz de Cristal">
+          Cargando encuesta...
+        </iframe>
+      </div>
+
+      <div class="text-center mt-8">
+        <p class="text-sm opacity-60">
+          Esta encuesta es completamente anónima. Tus respuestas serán utilizadas únicamente para validación social ante instituciones y fundaciones.
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-slate-900 text-white py-12 mt-12">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <div class="flex items-center justify-center gap-3 mb-4 opacity-60">
+        <img src="./assets/img/logoVC.png" alt="Voz de Cristal" class="h-8 w-8" />
+        <span class="text-xs tracking-widest font-bold">VOZ DE CRISTAL</span>
+      </div>
+      <p class="text-xs opacity-60">© 2026 · Desarrollado por: <span class="font-mono">&gt;</span> Un Soñador con Poca Ram 👨🏻‍💻</p>
+    </div>
+  </footer>
+
+  <script src="./assets/js/encuesta.js"></script>
+</body>
+</html>

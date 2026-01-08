@@ -1,0 +1,89 @@
+body {
+  background:
+    radial-gradient(circle at 20% 20%, rgba(155, 227, 248, 0.25), transparent 35%),
+    radial-gradient(circle at 80% 10%, rgba(214, 204, 255, 0.25), transparent 30%),
+    linear-gradient(135deg, #fdfbff 0%, #fff3ed 45%, #ffe4d8 100%);
+  font-family: 'Montserrat', system-ui, sans-serif;
+  color: #1f2d3d;
+}
+
+body.night {
+  background:
+    radial-gradient(circle at 20% 20%, rgba(155, 227, 248, 0.08), transparent 35%),
+    radial-gradient(circle at 80% 10%, rgba(214, 204, 255, 0.08), transparent 30%),
+    linear-gradient(135deg, #0f172a 0%, #101828 45%, #111827 100%);
+  color: #e5e7eb;
+}
+
+.night .glass {
+  background: rgba(17, 24, 39, 0.65);
+  border-color: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.night .glass-soft {
+  background: rgba(17, 24, 39, 0.55);
+  border-color: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.45);
+}
+
+.night h1,
+.night h2,
+.night h3,
+.night p,
+.night a,
+.night span {
+  color: #e5e7eb;
+}
+
+.night .glass a,
+.night .glass-soft a {
+  color: #e5e7eb;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.12);
+}
+
+.glass-soft {
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  box-shadow: 0 16px 48px rgba(15, 23, 42, 0.1);
+}
+
+.animate-breathe {
+  animation: breathe 4.5s ease-in-out infinite;
+}
+
+@keyframes breathe {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(155, 227, 248, 0.25); }
+  50% { transform: scale(1.03); box-shadow: 0 0 35px 8px rgba(214, 204, 255, 0.35); }
+}
+
+.animate-float {
+  animation: float 8s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.delay-200 { animation-delay: 0.2s; }
+.delay-400 { animation-delay: 0.4s; }

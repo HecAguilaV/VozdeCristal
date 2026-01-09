@@ -39,8 +39,8 @@ El proyecto está abierto a la colaboración de instituciones, empresas, municip
 ---
 
 **Impulsores:**
-- Yaneth – Mamá y tía
-- Héctor – Papá informático
+- Yaneth Villegas – Mamá, tía e Impulsora
+- Héctor Águila – Papá y Arquitecto de Sistemas
 
 Ambos ponen a disposición de la sociedad esta base conceptual y técnica, invitando a instituciones y empresas a sumarse.
 

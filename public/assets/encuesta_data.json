@@ -1,0 +1,52 @@
+{
+  "p1": {
+    "labels": [
+      "3",
+      "4"
+    ],
+    "values": [
+      1,
+      2
+    ]
+  },
+  "p2": {
+    "labels": [
+      "Muy útil"
+    ],
+    "values": [
+      3
+    ]
+  },
+  "p3": {
+    "labels": [
+      "No",
+      "Si"
+    ],
+    "values": [
+      2,
+      1
+    ]
+  },
+  "p4": {
+    "labels": [
+      "Si"
+    ],
+    "values": [
+      3
+    ]
+  },
+  "p5": {
+    "labels": [
+      "Accidentes Físicos o caídas",
+      "Extravíos en lugares públicos",
+      "Falta de comunicación inmediata en caso de emergencia",
+      "Trato Inadecuado o negligencia por parte de terceros"
+    ],
+    "values": [
+      1,
+      3,
+      3,
+      3
+    ]
+  }
+}

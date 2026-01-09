@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Resultados en tiempo real del estudio Voz de Cristal: seguridad, autonomía y apoyo pedagógico infantil." />
+  <meta name="robots" content="noindex, nofollow" />
+
+  <title>Resultados del Estudio | Voz de Cristal</title>
+
+  <link rel="icon" type="image/png" href="./assets/img/logoVC.png" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;600;700&display=swap"
+    rel="stylesheet" />
+
+  <!-- Styles -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    blockquote {
+      font-family: 'Crimson Pro', serif;
+    }
+
+    .logo-text {
+      letter-spacing: 0.15em;
+      font-weight: 700;
+    }
+
+    /* Custom Chart Tooltip styling could go here if needed, but Chart.js handles most well */
+  </style>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body class="bg-[#FFF5F2] text-[#1A1A1A] selection:bg-orange-100 flex flex-col min-h-screen">
+
+  <!-- Header (Consistent with index.html) -->
+  <header class="fixed top-0 left-0 right-0 bg-[#FFF5F2]/90 backdrop-blur-md z-50 border-b border-orange-100/50">
+    <div class="max-w-7xl mx-auto px-6 py-3 md:py-4 flex items-center justify-between">
+      <!-- Banner full-width en móvil, logo+texto en desktop -->
+      <a href="index.html" class="flex items-center w-full md:w-auto">
+        <img src="./assets/img/Banner.png" alt="Voz de Cristal" class="h-10 w-full object-contain md:hidden" />
+        <div class="hidden md:flex items-center gap-3">
+          <img src="./assets/img/logoVC.png" alt="Voz de Cristal" class="h-14 w-14" />
+          <span class="logo-text text-sm">VOZ DE CRISTAL</span>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex gap-8 text-sm items-center">
+        <a href="index.html#proyecto" class="hover:opacity-100 opacity-60 transition">Proyecto</a>
+        <a href="index.html#faq" class="hover:opacity-100 opacity-60 transition">Preguntas</a>
+        <a href="index.html#equipo" class="hover:opacity-100 opacity-60 transition">Equipo</a>
+        <a href="resultados.html" class="hover:opacity-100 opacity-100 transition text-[#F48C71]">Resultados</a>
+        <a href="index.html#encuesta"
+          class="hover:opacity-100 opacity-60 transition font-bold border-b border-slate-800">Participar</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="flex-grow pt-28 pb-16 px-6">
+    <div class="max-w-7xl mx-auto space-y-12">
+
+      <!-- Hero Section -->
+      <section class="max-w-4xl space-y-6">
+        <p class="text-xs uppercase tracking-[0.2em] opacity-40">Transparencia Institucional</p>
+        <h1 class="text-5xl md:text-6xl font-serif leading-[0.95] tracking-tight text-slate-900">
+          Resultados del Estudio <br />
+          <span class="italic text-[#F48C71]">Voz de Cristal</span>
+        </h1>
+        <p
+          class="text-lg md:text-xl leading-relaxed text-slate-600 font-light max-w-2xl border-l-2 border-[#F48C71] pl-6">
+          Visualización en tiempo real de las percepciones de familias y educadores sobre seguridad infantil, autonomía
+          y el uso de tecnología ética en Chile.
+        </p>
+      </section>
+
+      <!-- Dashboard Grid (Bento Box Layout) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Card 1: Main Metric (P1 - Information) -->
+        <div
+          class="bg-white/60 backdrop-blur-sm rounded-2xl p-8 shadow-sm border border-white/50 hover:shadow-md transition lg:col-span-2 flex flex-col md:flex-row gap-8 items-center">
+          <div class="flex-1 space-y-4">
+            <span
+              class="inline-block px-3 py-1 rounded-full bg-orange-100 text-[#F48C71] text-xs font-bold tracking-wider uppercase">Contexto</span>
+            <h3 class="text-2xl md:text-3xl font-serif leading-tight">¿Tienen los padres información suficiente?</h3>
+            <p class="text-sm opacity-70 leading-relaxed">
+              Percepción sobre la información disponible cuando los hijos están bajo el cuidado de terceros (colegio,
+              transporte).
+              <br /><span class="italic text-xs opacity-60">(1 = Poca información, 5 = Información total)</span>
+            </p>
+          </div>
+          <div class="w-full md:w-1/2 h-64">
+            <canvas id="chart-p1"></canvas>
+          </div>
+        </div>
+
+        <!-- Card 2: Utility Consensus (P2 - Useful?) -->
+        <div
+          class="bg-white/60 backdrop-blur-sm rounded-2xl p-8 shadow-sm border border-white/50 hover:shadow-md transition flex flex-col">
+          <h3 class="text-xl font-serif mb-2">Utilidad Percibida</h3>
+          <p class="text-xs opacity-60 mb-6 flex-grow">Aceptación de sensores pedagógicos.</p>
+          <div class="h-48 relative flex justify-center">
+            <canvas id="chart-p2"></canvas>
+          </div>
+        </div>
+
+        <!-- Card 3 & 4: Yes/No Metrics - Side by Side -->
+        <div
+          class="bg-slate-900 text-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition flex flex-col justify-between">
+          <div class="space-y-2">
+            <h3 class="text-xl font-serif text-teal-300">Privacidad</h3>
+            <p class="text-sm opacity-70">¿Es fundamental que NO grabe audio/video?</p>
+          </div>
+          <div class="h-40 mt-6">
+            <canvas id="chart-p3"></canvas>
+          </div>
+        </div>
+
+        <div
+          class="bg-white/60 backdrop-blur-sm rounded-2xl p-8 shadow-sm border border-white/50 hover:shadow-md transition flex flex-col justify-between">
+          <div class="space-y-2">
+            <h3 class="text-xl font-serif text-[#F48C71]">Acceso Universal</h3>
+            <p class="text-sm opacity-70">Apoyo a entrega gratuita en CESFAM/Colegios.</p>
+          </div>
+          <div class="h-40 mt-6">
+            <canvas id="chart-p4"></canvas>
+          </div>
+        </div>
+
+        <!-- Card 5: Full Width Deep Dive (P5 - Fears) -->
+        <div
+          class="bg-white/60 backdrop-blur-sm rounded-2xl p-8 shadow-sm border border-white/50 hover:shadow-md transition lg:col-span-3">
+          <div class="mb-6 border-b border-slate-100 pb-4">
+            <h3 class="text-2xl font-serif">Principales Temores Parentales</h3>
+            <p class="text-sm opacity-60">¿Cuál es el mayor temor respecto a la seguridad de su hijo/a en su ausencia?
+            </p>
+          </div>
+          <div class="h-80 w-full">
+            <canvas id="chart-p5"></canvas>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="text-center pt-8 opacity-60 text-xs">
+        <p>Datos actualizados automáticamente al cargar la página. Muestra agregada y anónima.</p>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer (Consistent with index.html) -->
+  <footer class="bg-slate-900 text-white py-16 -mx-6 px-6 md:-mx-0 md:px-0">
+    <div class="max-w-7xl mx-auto px-6 space-y-8">
+      <div class="flex flex-col md:flex-row justify-between items-start gap-8">
+        <div class="space-y-3">
+          <!-- Logo circular + texto en móvil, banner en desktop -->
+          <div class="flex items-center gap-3 md:hidden">
+            <img src="./assets/img/logoVC.png" alt="Voz de Cristal" class="h-8 w-8" />
+            <span class="text-xs tracking-widest text-white font-bold">VOZ DE CRISTAL</span>
+          </div>
+          <img src="./assets/img/Banner.png" alt="Voz de Cristal" class="hidden md:block h-12 w-auto" />
+          <p class="text-xs opacity-60 max-w-xs">Cuando el sistema calla, la tecnología habla.</p>
+        </div>
+        <div class="space-y-3">
+          <p class="text-xs uppercase tracking-wider opacity-40">Contacto Institucional</p>
+          <p class="text-sm">¿Representas una institución, fundación o medio?</p>
+          <a href="mailto:contacto@vozdecristal.org"
+            class="text-sm border-b border-white/30 hover:border-white transition inline-block">vozdecristal2026@gmail.com</a>
+        </div>
+      </div>
+      <div class="pt-6 border-t border-white/10">
+        <p class="text-xs opacity-60 flex items-center gap-2">© 2026 · Desarrollado por:
+          <a href="https://github.com/HecAguilaV/VozdeCristal" target="_blank"
+            class="flex items-center gap-2 group font-mono hover:text-teal-300 transition"><span> >Un Soñador con Poca
+              Ram 👨🏻‍💻</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+              class="w-5 h-5 opacity-80 group-hover:opacity-100">
+              <path
+                d="M12 2C6.477 2 2 6.484 2 12.021c0 4.428 2.865 8.184 6.839 9.504.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.004.07 1.532 1.032 1.532 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.339-2.221-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.025A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.295 2.748-1.025 2.748-1.025.546 1.378.202 2.397.1 2.65.64.7 1.028 1.595 1.028 2.688 0 3.847-2.337 4.695-4.566 4.944.359.309.678.919.678 1.852 0 1.336-.012 2.417-.012 2.747 0 .267.18.577.688.48C19.138 20.2 22 16.447 22 12.021 22 6.484 17.523 2 12 2Z" />
+            </svg>
+          </a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Configuration & Branding Colors
+    Chart.defaults.font.family = "'Inter', system-ui, sans-serif";
+    Chart.defaults.color = '#64748b';
+
+    const colors = {
+      primary: '#F48C71',    // Brand Orange
+      secondary: '#2dd4bf',  // Teal
+      dark: '#1e293b',       // Slate 800
+      light: '#e2e8f0',      // Slate 200
+      accent: '#fbbf24',     // Amber
+      purple: '#c084fc'      // Violet
+    };
+
+    const palette = [
+      colors.primary,
+      colors.secondary,
+      colors.accent,
+      colors.purple,
+      '#60a5fa',
+      '#f87171'
+    ];
+
+    async function fetchData() {
+      try {
+        const response = await fetch('assets/encuesta_data.json');
+        if (!response.ok) throw new Error('Error loading data');
+        return await response.json();
+      } catch (error) {
+        console.error("Failed to load survey data:", error);
+        return null;
+      }
+    }
+
+    function createChart(ctxId, type, data, options = {}) {
+      const ctx = document.getElementById(ctxId);
+      if (!ctx) return;
+
+      const defaultOptions = {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            display: false
+          },
+          tooltip: {
+            backgroundColor: 'rgba(30, 41, 59, 0.9)',
+            padding: 12,
+            titleFont: { family: 'Crimson Pro', size: 14 },
+            bodyFont: { family: 'Inter', size: 12 },
+            cornerRadius: 8,
+            displayColors: false
+          }
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            grid: { display: false } // Cleaner look
+          },
+          x: {
+            grid: { display: false }
+          }
+        },
+        animation: {
+          duration: 1500,
+          easing: 'easeOutQuart'
+        }
+      };
+
+      // Merge deep options
+      const finalOptions = { ...defaultOptions, ...options };
+      if (options.plugins) finalOptions.plugins = { ...defaultOptions.plugins, ...options.plugins };
+      if (options.scales) finalOptions.scales = { ...defaultOptions.scales, ...options.scales };
+      if (options.indexAxis) finalOptions.indexAxis = options.indexAxis;
+
+      return new Chart(ctx, {
+        type: type,
+        data: data,
+        options: finalOptions
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', async () => {
+      const data = await fetchData();
+      if (!data) return;
+
+      // 1. P1: Information (Bar Vertical)
+      createChart('chart-p1', 'bar', {
+        labels: data.p1.labels,
+        datasets: [{
+          label: 'Respuestas',
+          data: data.p1.values,
+          backgroundColor: data.p1.labels.map(l => parseInt(l) >= 4 ? colors.secondary : colors.primary),
+          borderRadius: 6,
+          barThickness: 'flex',
+          maxBarThickness: 40
+        }]
+      });
+
+      // 2. P2: Utility (Doughnut)
+      createChart('chart-p2', 'doughnut', {
+        labels: data.p2.labels,
+        datasets: [{
+          data: data.p2.values,
+          backgroundColor: [colors.secondary, colors.primary, colors.light, colors.accent],
+          borderWidth: 0,
+          hoverOffset: 10
+        }]
+      }, {
+        plugins: {
+          legend: {
+            display: true,
+            position: 'bottom',
+            labels: { boxWidth: 10, usePointStyle: true, padding: 20 }
+          }
+        },
+        scales: { x: { display: false }, y: { display: false } },
+        cutout: '70%'
+      });
+
+      // 3. P3: Privacy (Bar Horizontal for simpler YES/NO comparison, customized for dark bg)
+      // Note: Dark card needs light text
+      const darkCtx = document.getElementById('chart-p3');
+      if (darkCtx) {
+        Chart.defaults.color = '#94a3b8'; // Lighter text for dark implementation
+      }
+      createChart('chart-p3', 'bar', {
+        labels: data.p3.labels,
+        datasets: [{
+          data: data.p3.values,
+          backgroundColor: [colors.secondary, '#ef4444'], // Teal for Yes/Good, Red for No/Bad usually? Or just palette
+          borderRadius: 4,
+          maxBarThickness: 30
+        }]
+      }, {
+        indexAxis: 'y',
+        scales: { x: { display: false }, y: { grid: { display: false } } }
+      });
+      // Reset defaults
+      Chart.defaults.color = '#64748b';
+
+      // 4. P4: Free Kit (Bar)
+      createChart('chart-p4', 'bar', {
+        labels: data.p4.labels,
+        datasets: [{
+          data: data.p4.values,
+          backgroundColor: colors.primary,
+          borderRadius: 4,
+          maxBarThickness: 50
+        }]
+      });
+
+      // 5. P5: Fears (Horizontal Bar for long labels)
+      createChart('chart-p5', 'bar', {
+        labels: data.p5.labels,
+        datasets: [{
+          label: 'Menciones',
+          data: data.p5.values,
+          backgroundColor: palette,
+          borderRadius: 0,
+          barPercentage: 0.8,
+          categoryPercentage: 0.9,
+          borderRadius: 4
+        }]
+      }, {
+        indexAxis: 'y',
+        plugins: {
+          legend: { display: false }
+        },
+        scales: {
+          x: { grid: { display: true, color: '#f1f5f9' } }
+        }
+      });
+
+    });
+  </script>
+</body>
+
+</html>

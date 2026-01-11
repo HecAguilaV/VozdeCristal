@@ -33,6 +33,3 @@ yarn-error.log*
 
 # PDFs (muy pesados para GitHub)
 docs/PDF/
-
-# Confidential Documentation
-docs/
